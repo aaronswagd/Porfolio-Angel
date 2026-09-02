@@ -94,6 +94,7 @@ body {
     align-items: center;
     width: 100%;
     gap: 20px;
+    padding: 0 10px; /* Añadido padding horizontal para separar del borde */
 }
 
 .logo {
@@ -104,6 +105,7 @@ body {
     color: var(--text);
     text-shadow: 0 0 30px rgba(122, 26, 26, 0.3);
     transition: color 0.4s, text-shadow 0.4s;
+    margin-right: auto; /* Empuja el nav y el botón a la derecha */
 }
 .logo::before {
     content: "✦ ";
@@ -124,6 +126,7 @@ nav {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    margin-right: 20px; /* Separación entre nav y el botón */
 }
 nav a {
     color: var(--text-muted);
@@ -165,6 +168,7 @@ nav a:hover::after {
     color: var(--gold);
     transition: all var(--transition);
     flex-shrink: 0;
+    margin-right: 4px; /* Pequeño margen derecho para no pegar al borde */
 }
 #theme-toggle:hover {
     border-color: var(--gold);
@@ -613,7 +617,7 @@ footer .socials a:hover {
     .header-inner {
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 8px 0;
+        padding: 8px 10px;
         justify-content: space-between;
     }
     #main-header {
@@ -629,9 +633,11 @@ footer .socials a:hover {
         order: 3;
         width: 100%;
         justify-content: center;
+        margin-right: 0;
     }
     .logo {
         font-size: 1.6rem;
+        margin-right: 0;
     }
     .logo::before,
     .logo::after {
@@ -641,6 +647,7 @@ footer .socials a:hover {
         width: 36px;
         height: 36px;
         font-size: 1rem;
+        margin-right: 0;
     }
 }
 
