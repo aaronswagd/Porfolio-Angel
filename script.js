@@ -8,12 +8,11 @@
 
     function handleScroll() {
         const currentScrollY = window.scrollY;
+        const threshold = 80; // se oculta un poco antes
 
-        // Si bajamos (scroll down) y pasamos de 100px, ocultar header
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        if (currentScrollY > lastScrollY && currentScrollY > threshold) {
             header.classList.add('hidden');
         } else {
-            // Si subimos, mostrar header
             header.classList.remove('hidden');
         }
 
@@ -30,11 +29,11 @@
         }
     });
 
-    // ─── BOTÓN FLOTANTE "VOLVER ARRIBA" ───
+    // ─── BOTÓN DE SCROLL ───
     const scrollBtn = document.getElementById('scroll-top-btn');
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 400) {
             scrollBtn.classList.add('visible');
         } else {
             scrollBtn.classList.remove('visible');
@@ -48,7 +47,7 @@
         });
     });
 
-    // ─── VIDEOS (reproducción/pausa) ───
+    // ─── VIDEOS ───
     const videoCards = document.querySelectorAll('.video-card');
 
     videoCards.forEach(card => {
