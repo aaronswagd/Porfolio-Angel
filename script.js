@@ -47,7 +47,7 @@
         });
     });
 
-    // ─── MODO DÍA / NOCHE ───
+    // ─── MODO DÍA / NOCHE (con depuración) ───
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
@@ -61,11 +61,14 @@
         themeIcon.textContent = '🌙';
     }
 
-    themeToggle.addEventListener('click', function() {
+    // Evento con confirmación
+    themeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
         body.classList.toggle('light-mode');
         const isLight = body.classList.contains('light-mode');
         themeIcon.textContent = isLight ? '☀️' : '🌙';
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        console.log('Tema cambiado a:', isLight ? 'día' : 'noche'); // Para depuración
     });
 
     // ─── VIDEOS ───
