@@ -8,17 +8,19 @@
 }
 
 :root {
-    --bg: #0b0908;
-    --bg-card: #14100e;
-    --text: #e6ddd2;
-    --text-muted: #8f8176;
-    --accent: #7a1a1a;
-    --accent-glow: #b91c1c;
+    --bg: #0a0706;
+    --bg-card: #120c0a;
+    --text: #d4c9b8;
+    --text-muted: #7a6b5c;
+    --accent: #6b1a1a;
+    --accent-glow: #a12222;
     --gold: #b5974a;
-    --border: #2a1f1a;
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+    --gold-dark: #7a6430;
+    --border: #2a1c16;
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.95);
     --radius: 4px;
     --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --header-height: 80px;
 }
 
 html {
@@ -29,49 +31,140 @@ body {
     font-family: 'Cormorant Garamond', serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.8;
     padding: 0 24px;
-    background-image: radial-gradient(circle at 20% 30%, #1f1410 0%, #0b0908 80%);
+    position: relative;
     min-height: 100vh;
+    padding-top: var(--header-height); /* espacio para el header fijo */
+}
+
+/* ─── Textura de fondo ─── */
+.bg-texture {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        repeating-linear-gradient(45deg,
+            rgba(60, 40, 30, 0.05) 0px,
+            rgba(60, 40, 30, 0.05) 2px,
+            transparent 2px,
+            transparent 6px),
+        repeating-linear-gradient(-45deg,
+            rgba(40, 30, 20, 0.05) 0px,
+            rgba(40, 30, 20, 0.05) 2px,
+            transparent 2px,
+            transparent 6px),
+        radial-gradient(circle at 30% 40%, #1a100e 0%, #0a0706 80%);
+    background-blend-mode: overlay;
 }
 
 .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
-/* ─── Tipografía Gótica ─── */
+/* ─── HEADER FIJO ─── */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 7, 6, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(0);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+#main-header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* ─── BOTÓN FLOTANTE "VOLVER ARRIBA" ─── */
+#scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: rgba(10, 7, 6, 0.85);
+    backdrop-filter: blur(4px);
+    color: var(--gold);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0.4s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Uncial Antiqua', cursive;
+    line-height: 1;
+}
+
+#scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scroll-top-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 40px rgba(122, 26, 26, 0.5);
+    color: #fff;
+    background: var(--accent);
+}
+
+/* ─── Tipografía gótica ─── */
 h1,
 h2,
 h3 {
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-family: 'Uncial Antiqua', 'MedievalSharp', cursive;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 0.5rem;
     color: var(--gold);
-    text-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
+    text-shadow: 0 0 30px rgba(181, 151, 74, 0.15);
 }
 
 .section-subtitle {
+    font-family: 'MedievalSharp', cursive;
     color: var(--accent-glow);
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 1rem;
     letter-spacing: 0.2em;
-    text-transform: uppercase;
     margin-bottom: 0.25rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .section-title {
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 0.75rem;
     color: var(--text);
 }
@@ -83,53 +176,53 @@ h2 {
     font-style: italic;
 }
 
-/* ─── Divisor decorativo ─── */
+/* ─── Divisor ornamental ─── */
 .ornament {
     text-align: center;
-    color: var(--gold);
-    font-size: 1.2rem;
-    letter-spacing: 0.8rem;
-    padding: 10px 0;
-    opacity: 0.5;
-    font-family: 'Cinzel', serif;
+    color: var(--gold-dark);
+    font-size: 1.4rem;
+    letter-spacing: 0.6rem;
+    padding: 16px 0;
+    opacity: 0.6;
+    font-family: 'Uncial Antiqua', cursive;
+    text-shadow: 0 0 10px rgba(181, 151, 74, 0.1);
 }
 
-/* ─── Header ─── */
-header {
-    padding: 28px 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
+/* ─── Marco gótico ─── */
+.gothic-frame {
+    position: relative;
+    border: 2px solid var(--border);
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(0, 0, 0, 0.9);
+}
+.gothic-frame::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(181, 151, 74, 0.15);
+    pointer-events: none;
+    z-index: 2;
 }
 
+/* ─── Logo y nav ─── */
 .logo {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 2.2rem;
+    font-weight: 400;
     color: var(--text);
-    text-shadow: 0 0 30px rgba(122, 26, 26, 0.3);
+    text-shadow: 0 0 40px rgba(122, 26, 26, 0.4);
+    letter-spacing: 0.1em;
 }
-.logo::before {
-    content: "✦ ";
-    color: var(--gold);
-    font-size: 1.4rem;
-}
-.logo::after {
-    content: " ✦";
-    color: var(--gold);
-    font-size: 1.4rem;
+.logo:hover {
+    text-shadow: 0 0 60px rgba(181, 151, 74, 0.2);
 }
 
 nav {
     display: flex;
     gap: 32px;
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
 }
@@ -140,22 +233,22 @@ nav a {
     position: relative;
 }
 nav a::after {
-    content: '';
+    content: '☾';
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--accent-glow);
-    transition: width var(--transition);
-    box-shadow: 0 0 10px var(--accent-glow);
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: var(--gold-dark);
+    opacity: 0;
+    transition: opacity 0.4s;
 }
 nav a:hover {
     color: var(--gold);
-    text-shadow: 0 0 15px rgba(181, 151, 74, 0.4);
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.4);
 }
 nav a:hover::after {
-    width: 100%;
+    opacity: 1;
 }
 
 /* ─── Hero ─── */
@@ -169,16 +262,14 @@ nav a:hover::after {
 
 .hero-text h1 {
     font-size: 4.2rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.1;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #f0e8d8;
 }
 .hero-text h1 .highlight {
     color: var(--accent-glow);
-    font-style: italic;
-    font-weight: 400;
-    text-shadow: 0 0 30px rgba(185, 28, 28, 0.4);
+    text-shadow: 0 0 40px rgba(185, 28, 28, 0.5);
 }
 .hero-text p {
     font-size: 1.2rem;
@@ -196,20 +287,42 @@ nav a:hover::after {
     border: 1px solid var(--gold);
     border-radius: 0;
     text-decoration: none;
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    font-size: 0.8rem;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: all var(--transition);
-    box-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
+    box-shadow: 0 0 20px rgba(181, 151, 74, 0.05);
+    position: relative;
+}
+.hero-btn::before,
+.hero-btn::after {
+    content: '☾';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--gold-dark);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.hero-btn::before {
+    left: 12px;
+}
+.hero-btn::after {
+    right: 12px;
 }
 .hero-btn:hover {
     background: var(--accent);
     color: #fff;
     border-color: var(--accent-glow);
-    box-shadow: 0 0 40px rgba(122, 26, 26, 0.6);
-    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(122, 26, 26, 0.5);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.hero-btn:hover::before,
+.hero-btn:hover::after {
+    opacity: 1;
 }
 
 .hero-media {
@@ -221,9 +334,7 @@ nav a:hover::after {
     grid-row: 1 / 3;
     border-radius: var(--radius);
     overflow: hidden;
-    background: var(--border);
-    border: 1px solid var(--border);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    background: #0a0706;
 }
 .hero-media .main-img img,
 .hero-media .side-img img {
@@ -232,24 +343,34 @@ nav a:hover::after {
     object-fit: cover;
     display: block;
     transition: transform 0.8s, filter 0.8s;
-    filter: grayscale(0.4) contrast(1.1);
+    filter: grayscale(0.6) contrast(1.3) brightness(0.85);
 }
 .hero-media .main-img:hover img,
 .hero-media .side-img:hover img {
-    transform: scale(1.05);
-    filter: grayscale(0) contrast(1.2);
+    transform: scale(1.04);
+    filter: grayscale(0) contrast(1.4) brightness(1);
 }
 .hero-media .side-img {
     border-radius: var(--radius);
     overflow: hidden;
-    background: var(--border);
-    border: 1px solid var(--border);
+    background: #0a0706;
 }
 .hero-media .side-img:last-child {
     aspect-ratio: 1 / 0.9;
 }
 .hero-media .side-img:first-of-type {
     aspect-ratio: 1 / 0.7;
+}
+.frame-ornament {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 1.6rem;
+    color: var(--gold);
+    opacity: 0.5;
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.3);
+    pointer-events: none;
+    z-index: 3;
 }
 
 /* ─── Secciones ─── */
@@ -274,20 +395,17 @@ section {
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
 }
-
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
 }
 
-/* ─── Tarjetas de obra / foto (estilo gótico) ─── */
+/* ─── Tarjetas de obra / foto ─── */
 .art-card {
     background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
     transition: transform var(--transition), box-shadow var(--transition),
                 border-color var(--transition);
     cursor: default;
@@ -295,7 +413,7 @@ section {
 .art-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 60px rgba(122, 26, 26, 0.3);
-    border-color: var(--accent);
+    border-color: var(--gold-dark);
 }
 
 .art-card .img-wrap {
@@ -308,8 +426,9 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(11, 9, 8, 0.6) 0%, transparent 60%);
+    background: linear-gradient(0deg, rgba(10, 7, 6, 0.7) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 1;
 }
 .art-card .img-wrap img {
     width: 100%;
@@ -317,7 +436,7 @@ section {
     object-fit: cover;
     display: block;
     transition: transform 0.8s, filter 0.8s;
-    filter: grayscale(0.6) contrast(1.2);
+    filter: grayscale(0.7) contrast(1.2);
 }
 .art-card:hover .img-wrap img {
     transform: scale(1.08);
@@ -330,9 +449,9 @@ section {
 }
 .art-card .card-body h3 {
     font-size: 1rem;
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     color: var(--gold);
 }
 .art-card .card-body .meta {
@@ -347,8 +466,6 @@ section {
     background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
     transition: transform var(--transition), box-shadow var(--transition),
                 border-color var(--transition);
 }
@@ -368,7 +485,7 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.1) brightness(0.8);
+    filter: contrast(1.2) brightness(0.7) saturate(0.6);
 }
 .video-card .video-wrap .play-icon {
     position: absolute;
@@ -381,8 +498,8 @@ section {
     opacity: 0;
     transition: opacity 0.4s, transform 0.4s;
     pointer-events: none;
-    text-shadow: 0 0 40px rgba(181, 151, 74, 0.8);
-    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 50px rgba(181, 151, 74, 0.8);
+    background: rgba(0, 0, 0, 0.5);
 }
 .video-card:hover .video-wrap .play-icon {
     opacity: 1;
@@ -394,8 +511,8 @@ section {
 }
 .video-card .card-body h3 {
     font-size: 1rem;
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
     color: var(--gold);
 }
 .video-card .card-body .meta {
@@ -412,12 +529,13 @@ section {
 }
 .cta-section h2 {
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 400;
     color: var(--text);
 }
 .cta-section h2::after {
-    content: " 🜂";
+    content: " ☠";
     color: var(--accent-glow);
+    font-size: 2.5rem;
 }
 .cta-section p {
     color: var(--text-muted);
@@ -427,7 +545,6 @@ section {
     font-style: italic;
 }
 .cta-section .hero-btn {
-    background: transparent;
     border-color: var(--accent);
     color: var(--accent-glow);
 }
@@ -440,16 +557,15 @@ section {
 /* ─── Footer ─── */
 footer {
     padding: 32px 0 40px;
-    border-top: 1px solid var(--border);
+    border-top: 2px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-    font-size: 0.9rem;
     color: var(--text-muted);
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1rem;
     letter-spacing: 0.05em;
 }
 footer .socials {
@@ -463,7 +579,7 @@ footer .socials a {
 }
 footer .socials a:hover {
     color: var(--gold);
-    text-shadow: 0 0 20px rgba(181, 151, 74, 0.4);
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.3);
 }
 
 /* ─── Responsive ─── */
@@ -495,23 +611,31 @@ footer .socials a:hover {
     .hero-text h1 {
         font-size: 2.8rem;
     }
-    header {
+    #main-header .header-inner {
         flex-direction: column;
         align-items: flex-start;
+        padding: 8px 20px;
+    }
+    #main-header {
+        height: auto;
+        min-height: 70px;
+    }
+    body {
+        padding-top: 80px;
     }
     nav {
         gap: 20px;
         flex-wrap: wrap;
     }
-    .logo::before,
-    .logo::after {
-        content: "";
+    .logo {
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 520px) {
     body {
         padding: 0 16px;
+        padding-top: 80px;
     }
     .grid-3 {
         grid-template-columns: 1fr;
@@ -536,7 +660,14 @@ footer .socials a:hover {
         text-align: center;
     }
     .ornament {
-        font-size: 0.9rem;
+        font-size: 1rem;
         letter-spacing: 0.4rem;
+    }
+    #scroll-top-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
     }
 }
