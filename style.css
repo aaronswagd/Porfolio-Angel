@@ -534,10 +534,7 @@ section {
     font-size: 3rem;
     font-weight: 900;
     color: var(--text);
-}
-.cta-section h2::after {
-    content: " 🜂";
-    color: var(--accent-glow);
+
 }
 .cta-section p {
     color: var(--text-muted);
