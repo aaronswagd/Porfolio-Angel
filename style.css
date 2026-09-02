@@ -8,19 +8,17 @@
 }
 
 :root {
-    --bg: #0d0a08;
-    --bg-card: #161210;
-    --text: #eae3d8;
-    --text-muted: #8f8478;
-    --accent: #7a2a2a;
-    --accent-light: #b34a4a;
-    --gold: #b89a6b;
-    --gold-dim: #7a654a;
-    --border: #2a221c;
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
-    --radius: 6px;
-    --transition: 0.4s ease;
-    --header-height: 72px;
+    --bg: #0b0908;
+    --bg-card: #14100e;
+    --text: #e6ddd2;
+    --text-muted: #8f8176;
+    --accent: #7a1a1a;
+    --accent-glow: #b91c1c;
+    --gold: #b5974a;
+    --border: #2a1f1a;
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+    --radius: 4px;
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 html {
@@ -32,71 +30,113 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    padding: 0 20px;
-    padding-top: calc(var(--header-height) + 20px);
+    padding: 0 24px;
+    background-image: radial-gradient(circle at 20% 30%, #1f1410 0%, #0b0908 80%);
     min-height: 100vh;
-    background-image: radial-gradient(ellipse at 30% 20%, #1a1410 0%, #0d0a08 80%);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 20px;
 }
 
-/* ─── HEADER ELEGANTE ─── */
-#main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(13, 10, 8, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(42, 34, 28, 0.5);
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+/* ─── Tipografía Gótica ─── */
+h1,
+h2,
+h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
-#main-header.hidden {
-    transform: translateY(-100%);
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
 }
 
-.header-inner {
+.section-subtitle {
+    color: var(--accent-glow);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.section-desc {
+    color: var(--text-muted);
+    max-width: 560px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ─── Divisor decorativo ─── */
+.ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+    padding: 10px 0;
+    opacity: 0.5;
+    font-family: 'Cinzel', serif;
+}
+
+/* ─── Header ─── */
+header {
+    padding: 28px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
     color: var(--text);
-    text-shadow: 0 0 30px rgba(184, 154, 107, 0.1);
+    text-shadow: 0 0 30px rgba(122, 26, 26, 0.3);
 }
-.logo:hover {
+.logo::before {
+    content: "✦ ";
     color: var(--gold);
+    font-size: 1.4rem;
+}
+.logo::after {
+    content: " ✦";
+    color: var(--gold);
+    font-size: 1.4rem;
 }
 
 nav {
     display: flex;
     gap: 32px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 nav a {
     color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition);
+    transition: color var(--transition), text-shadow var(--transition);
     position: relative;
 }
 nav a::after {
@@ -106,173 +146,84 @@ nav a::after {
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--gold);
+    background: var(--accent-glow);
     transition: width var(--transition);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 nav a:hover {
     color: var(--gold);
+    text-shadow: 0 0 15px rgba(181, 151, 74, 0.4);
 }
 nav a:hover::after {
     width: 100%;
 }
 
-/* ─── BOTÓN DE SCROLL (ELEGANTE) ─── */
-#scroll-top-btn {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid var(--gold-dim);
-    background: rgba(13, 10, 8, 0.7);
-    backdrop-filter: blur(6px);
-    color: var(--gold);
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s, visibility 0.4s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    padding: 0;
-}
-
-#scroll-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-#scroll-top-btn:hover {
-    transform: translateY(-3px);
-    border-color: var(--gold);
-    box-shadow: 0 8px 30px rgba(184, 154, 107, 0.15);
-    background: rgba(13, 10, 8, 0.9);
-    color: #fff;
-}
-
-#scroll-top-btn svg {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.3s;
-}
-#scroll-top-btn:hover svg {
-    transform: translateY(-2px);
-}
-
-/* ─── TIPOGRAFÍA ─── */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-.section-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    margin-bottom: 0.25rem;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-}
-
-.section-desc {
-    color: var(--text-muted);
-    max-width: 520px;
-    font-size: 1.05rem;
-    font-style: italic;
-}
-
-/* ─── DIVISOR ─── */
-.ornament {
-    text-align: center;
-    color: var(--gold-dim);
-    font-size: 1rem;
-    letter-spacing: 1.2rem;
-    padding: 24px 0 16px;
-    opacity: 0.4;
-    font-family: 'Playfair Display', serif;
-}
-
-/* ─── MARCO SUTIL ─── */
-.frame {
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid rgba(42, 34, 28, 0.6);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
-}
-
-/* ─── HERO ─── */
+/* ─── Hero ─── */
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    padding: 40px 0 60px;
+    padding: 60px 0 80px;
     align-items: center;
 }
 
 .hero-text h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.1;
     margin-bottom: 1rem;
-    color: #f5ede4;
+    color: #fff;
 }
 .hero-text h1 .highlight {
-    color: var(--accent-light);
+    color: var(--accent-glow);
     font-style: italic;
     font-weight: 400;
-    text-shadow: 0 0 30px rgba(179, 74, 74, 0.2);
+    text-shadow: 0 0 30px rgba(185, 28, 28, 0.4);
 }
 .hero-text p {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
     max-width: 440px;
     margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .hero-btn {
     display: inline-block;
     background: transparent;
     color: var(--gold);
-    padding: 12px 36px;
-    border: 1px solid var(--gold-dim);
+    padding: 14px 40px;
+    border: 1px solid var(--gold);
     border-radius: 0;
     text-decoration: none;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: all var(--transition);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
 }
 .hero-btn:hover {
     background: var(--accent);
     color: #fff;
-    border-color: var(--accent-light);
-    box-shadow: 0 0 30px rgba(122, 42, 42, 0.3);
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 40px rgba(122, 26, 26, 0.6);
+    transform: scale(1.02);
 }
 
 .hero-media {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 16px;
 }
 .hero-media .main-img {
     grid-row: 1 / 3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--border);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 .hero-media .main-img img,
 .hero-media .side-img img {
@@ -280,13 +231,19 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s, filter 0.6s;
-    filter: grayscale(0.5) contrast(1.1);
+    transition: transform 0.8s, filter 0.8s;
+    filter: grayscale(0.4) contrast(1.1);
 }
 .hero-media .main-img:hover img,
 .hero-media .side-img:hover img {
-    transform: scale(1.03);
+    transform: scale(1.05);
     filter: grayscale(0) contrast(1.2);
+}
+.hero-media .side-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--border);
+    border: 1px solid var(--border);
 }
 .hero-media .side-img:last-child {
     aspect-ratio: 1 / 0.9;
@@ -295,9 +252,9 @@ h1, h2, h3 {
     aspect-ratio: 1 / 0.7;
 }
 
-/* ─── SECCIONES ─── */
+/* ─── Secciones ─── */
 section {
-    padding: 50px 0 30px;
+    padding: 60px 0 40px;
 }
 
 .section-header {
@@ -306,64 +263,76 @@ section {
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 20px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid rgba(42, 34, 28, 0.4);
-    padding-bottom: 16px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
 }
 
-/* ─── GRIDS ─── */
+/* ─── Grids ─── */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 28px;
 }
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 28px;
 }
 
-/* ─── TARJETAS ─── */
+/* ─── Tarjetas de obra / foto (estilo gótico) ─── */
 .art-card {
     background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border);
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition),
+                border-color var(--transition);
     cursor: default;
 }
 .art-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
-    border-color: var(--gold-dim);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(122, 26, 26, 0.3);
+    border-color: var(--accent);
 }
 
 .art-card .img-wrap {
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: #0a0806;
+    background: #0a0706;
+    position: relative;
+}
+.art-card .img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(11, 9, 8, 0.6) 0%, transparent 60%);
+    pointer-events: none;
 }
 .art-card .img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s, filter 0.6s;
+    transition: transform 0.8s, filter 0.8s;
     filter: grayscale(0.6) contrast(1.2);
 }
 .art-card:hover .img-wrap img {
-    transform: scale(1.06);
+    transform: scale(1.08);
     filter: grayscale(0) contrast(1.3);
 }
 
 .art-card .card-body {
-    padding: 16px 20px 20px;
+    padding: 18px 20px 22px;
     border-top: 1px solid var(--border);
 }
 .art-card .card-body h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
     font-weight: 600;
+    letter-spacing: 0.05em;
     color: var(--gold);
 }
 .art-card .card-body .meta {
@@ -373,22 +342,24 @@ section {
     font-style: italic;
 }
 
-/* ─── VIDEOS ─── */
+/* ─── Tarjetas de video ─── */
 .video-card {
     background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border);
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition),
+                border-color var(--transition);
 }
 .video-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
-    border-color: var(--gold-dim);
+    box-shadow: 0 20px 60px rgba(122, 26, 26, 0.3);
+    border-color: var(--gold);
 }
 .video-card .video-wrap {
     aspect-ratio: 16 / 9;
-    background: #0a0806;
+    background: #0a0706;
     position: relative;
     overflow: hidden;
 }
@@ -406,24 +377,24 @@ section {
     align-items: center;
     justify-content: center;
     color: var(--gold);
-    font-size: 3rem;
+    font-size: 3.5rem;
     opacity: 0;
     transition: opacity 0.4s, transform 0.4s;
     pointer-events: none;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
+    text-shadow: 0 0 40px rgba(181, 151, 74, 0.8);
+    background: rgba(0, 0, 0, 0.4);
 }
 .video-card:hover .video-wrap .play-icon {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 .video-card .card-body {
-    padding: 16px 20px 20px;
+    padding: 18px 20px 22px;
     border-top: 1px solid var(--border);
 }
 .video-card .card-body h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
     font-weight: 600;
     color: var(--gold);
 }
@@ -437,70 +408,76 @@ section {
 /* ─── CTA ─── */
 .cta-section {
     text-align: center;
-    padding: 40px 0 60px;
+    padding: 60px 0 80px;
 }
 .cta-section h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 900;
     color: var(--text);
 }
 .cta-section h2::after {
-    content: " ✦";
-    color: var(--gold-dim);
+    content: " 🜂";
+    color: var(--accent-glow);
 }
 .cta-section p {
     color: var(--text-muted);
     max-width: 480px;
     margin: 0.5rem auto 2rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 .cta-section .hero-btn {
+    background: transparent;
     border-color: var(--accent);
-    color: var(--accent-light);
+    color: var(--accent-glow);
 }
 .cta-section .hero-btn:hover {
     background: var(--accent);
     color: #fff;
-    border-color: var(--accent-light);
+    border-color: var(--accent-glow);
 }
 
-/* ─── FOOTER ─── */
+/* ─── Footer ─── */
 footer {
-    padding: 28px 0 36px;
+    padding: 32px 0 40px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
 }
 footer .socials {
     display: flex;
-    gap: 28px;
+    gap: 24px;
 }
 footer .socials a {
     color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition);
+    transition: color var(--transition), text-shadow var(--transition);
 }
 footer .socials a:hover {
     color: var(--gold);
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.4);
 }
 
-/* ─── RESPONSIVE ─── */
+/* ─── Responsive ─── */
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 40px 0 60px;
     }
     .hero-text h1 {
-        font-size: 3.2rem;
+        font-size: 3.4rem;
     }
     .hero-media {
-        max-width: 560px;
+        max-width: 600px;
         margin: 0 auto;
     }
 }
@@ -516,34 +493,25 @@ footer .socials a:hover {
         font-size: 2.2rem;
     }
     .hero-text h1 {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
     }
-    .header-inner {
+    header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 8px 0;
-    }
-    #main-header {
-        height: auto;
-        min-height: 64px;
-    }
-    body {
-        padding-top: 80px;
     }
     nav {
-        gap: 18px;
-        font-size: 0.9rem;
+        gap: 20px;
         flex-wrap: wrap;
     }
-    .logo {
-        font-size: 1.6rem;
+    .logo::before,
+    .logo::after {
+        content: "";
     }
 }
 
 @media (max-width: 520px) {
     body {
-        padding: 0 12px;
-        padding-top: 76px;
+        padding: 0 16px;
     }
     .grid-3 {
         grid-template-columns: 1fr;
@@ -558,27 +526,17 @@ footer .socials a:hover {
         font-size: 1.8rem;
     }
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .cta-section h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     footer {
         flex-direction: column;
         text-align: center;
     }
     .ornament {
-        letter-spacing: 0.6rem;
-        font-size: 0.8rem;
-    }
-    #scroll-top-btn {
-        width: 42px;
-        height: 42px;
-        bottom: 18px;
-        right: 18px;
-    }
-    #scroll-top-btn svg {
-        width: 18px;
-        height: 18px;
+        font-size: 0.9rem;
+        letter-spacing: 0.4rem;
     }
 }
