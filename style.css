@@ -15,10 +15,12 @@
     --accent: #7a1a1a;
     --accent-glow: #b91c1c;
     --gold: #b5974a;
+    --gold-dim: #7a6430;   /* ← variable agregada */
     --border: #2a1f1a;
     --shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
     --radius: 4px;
     --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --header-height: 80px;
 }
 
 html {
@@ -31,6 +33,7 @@ body {
     color: var(--text);
     line-height: 1.7;
     padding: 0 24px;
+    padding-top: calc(var(--header-height) + 20px);
     background-image: radial-gradient(circle at 20% 30%, #1f1410 0%, #0b0908 80%);
     min-height: 100vh;
 }
@@ -41,68 +44,32 @@ body {
     padding: 0 20px;
 }
 
-/* ─── Tipografía Gótica ─── */
-h1,
-h2,
-h3 {
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+/* ─── HEADER FIJO ─── */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 9, 8, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--gold);
-    text-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
+#main-header.hidden {
+    transform: translateY(-100%);
 }
 
-.section-subtitle {
-    color: var(--accent-glow);
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-    opacity: 0.8;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--text);
-}
-
-.section-desc {
-    color: var(--text-muted);
-    max-width: 560px;
-    font-size: 1.1rem;
-    font-style: italic;
-}
-
-/* ─── Divisor decorativo ─── */
-.ornament {
-    text-align: center;
-    color: var(--gold);
-    font-size: 1.2rem;
-    letter-spacing: 0.8rem;
-    padding: 10px 0;
-    opacity: 0.5;
-    font-family: 'Cinzel', serif;
-}
-
-/* ─── Header ─── */
-header {
-    padding: 28px 0 20px;
+.header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
+    width: 100%;
 }
 
 .logo {
@@ -157,6 +124,7 @@ nav a:hover {
 nav a:hover::after {
     width: 100%;
 }
+
 /* ─── BOTÓN DE SCROLL ─── */
 #scroll-top-btn {
     position: fixed;
@@ -202,6 +170,60 @@ nav a:hover::after {
 #scroll-top-btn:hover svg {
     transform: translateY(-2px);
 }
+
+/* ─── Tipografía ─── */
+h1,
+h2,
+h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(181, 151, 74, 0.1);
+}
+
+.section-subtitle {
+    color: var(--accent-glow);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.section-desc {
+    color: var(--text-muted);
+    max-width: 560px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ─── Divisor decorativo ─── */
+.ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+    padding: 10px 0;
+    opacity: 0.5;
+    font-family: 'Cinzel', serif;
+}
+
 /* ─── Hero ─── */
 .hero {
     display: grid;
@@ -490,7 +512,6 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-    font-size: 0.9rem;
     color: var(--text-muted);
     font-family: 'Cinzel', serif;
     font-size: 0.7rem;
@@ -539,9 +560,17 @@ footer .socials a:hover {
     .hero-text h1 {
         font-size: 2.8rem;
     }
-    header {
+    .header-inner {
         flex-direction: column;
         align-items: flex-start;
+        padding: 8px 0;
+    }
+    #main-header {
+        height: auto;
+        min-height: 64px;
+    }
+    body {
+        padding-top: 80px;
     }
     nav {
         gap: 20px;
@@ -556,6 +585,7 @@ footer .socials a:hover {
 @media (max-width: 520px) {
     body {
         padding: 0 16px;
+        padding-top: 76px;
     }
     .grid-3 {
         grid-template-columns: 1fr;
@@ -582,5 +612,15 @@ footer .socials a:hover {
     .ornament {
         font-size: 0.9rem;
         letter-spacing: 0.4rem;
+    }
+    #scroll-top-btn {
+        width: 42px;
+        height: 42px;
+        bottom: 18px;
+        right: 18px;
+    }
+    #scroll-top-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
