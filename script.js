@@ -8,9 +8,7 @@
         const video = card.querySelector('video');
         if (!video) return;
 
-        // Al hacer clic en toda la tarjeta → toggle play/pause
         card.addEventListener('click', function(e) {
-            // Evitar que el clic en el video dispare dos veces
             if (e.target.tagName === 'VIDEO') return;
 
             if (video.paused) {
@@ -20,7 +18,6 @@
             }
         });
 
-        // También permitir clic directo en el video
         video.addEventListener('click', function(e) {
             e.stopPropagation();
             if (video.paused) {
@@ -30,7 +27,6 @@
             }
         });
 
-        // Cuando el video se reproduce, asegurar que los demás se pausen
         video.addEventListener('play', function() {
             videoCards.forEach(otherCard => {
                 const otherVideo = otherCard.querySelector('video');
