@@ -10,12 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
 
-    <!-- Estilos -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- HEADER FIJO (se oculta/muestra con scroll) -->
+    <!-- HEADER FIJO -->
     <header id="main-header">
         <div class="container header-inner">
             <div class="logo">Kuroo</div>
@@ -25,10 +24,14 @@
                 <a href="#videos">Videos</a>
                 <a href="#contacto">Contacto</a>
             </nav>
+            <!-- Botón de modo día/noche -->
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
         </div>
     </header>
 
-    <!-- BOTÓN DE SCROLL (flecha elegante) -->
+    <!-- BOTÓN DE SCROLL (inferior derecha) -->
     <button id="scroll-top-btn" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24" width="24" height="24">
             <path d="M12 4l-8 8 1.5 1.5L12 7l6.5 6.5L20 12z" fill="currentColor"/>
