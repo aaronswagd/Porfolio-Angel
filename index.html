@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuroo · Arte Gótico</title>
+    <title>Kuroo · Estética Gótica</title>
 
-    <!-- Google Fonts: Góticas y elegantes -->
+    <!-- Fuentes: Blackletter + Serif victoriana -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
 
-    <!-- Estilos -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
+    <div class="bg-texture"></div>
 
-        <!-- HEADER -->
-        <header>
-            <div class="logo">Kuroo</div>
+    <!-- HEADER FIJO (se oculta/muestra con scroll) -->
+    <header id="main-header">
+        <div class="container header-inner">
+            <div class="logo">☠ Kuroo ☠</div>
             <nav>
                 <a href="#obras">Obras</a>
                 <a href="#fotos">Fotografía</a>
                 <a href="#videos">Visiones</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-        </header>
+        </div>
+    </header>
+
+    <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+    <button id="scroll-top-btn" aria-label="Volver arriba">⬆</button>
+
+    <div class="container">
 
         <!-- HERO -->
         <section class="hero" id="inicio">
             <div class="hero-text">
-                <p class="section-subtitle">Artista de la penumbra</p>
+                <p class="section-subtitle">𐂃 Artista de la penumbra 𐂃</p>
                 <h1>
                     Donde la sombra<br />
                     <span class="highlight">esculpe</span> la luz
@@ -40,29 +46,30 @@
                     Exploración de lo macabro y lo sublime. Pintura, fotografía
                     y video como ecos de un universo en tinieblas.
                 </p>
-                <a href="#obras" class="hero-btn">Adentrarse en el abismo</a>
+                <a href="#obras" class="hero-btn">⟡ Adentrarse en el abismo ⟡</a>
             </div>
             <div class="hero-media">
-                <div class="main-img">
+                <div class="main-img gothic-frame">
                     <img src="https://picsum.photos/id/1043/800/800" alt="Obra principal gótica" loading="lazy" />
+                    <div class="frame-ornament">⚜</div>
                 </div>
-                <div class="side-img">
+                <div class="side-img gothic-frame">
                     <img src="https://picsum.photos/id/103/600/600" alt="Detalle oscuro" loading="lazy" />
                 </div>
-                <div class="side-img">
+                <div class="side-img gothic-frame">
                     <img src="https://picsum.photos/id/1049/600/600" alt="Detalle gótico" loading="lazy" />
                 </div>
             </div>
         </section>
 
-        <!-- DIVISOR DECORATIVO -->
-        <div class="ornament">✦ ✧ ✦</div>
+        <!-- DIVISOR GÓTICO -->
+        <div class="ornament">✠ ✦ ✧ ✦ ✠</div>
 
         <!-- OBRAS -->
         <section id="obras">
             <div class="section-header">
                 <div>
-                    <p class="section-subtitle">Portafolio</p>
+                    <p class="section-subtitle">⚔ Portafolio ⚔</p>
                     <h2 class="section-title">Oscuras obras</h2>
                     <p class="section-desc">
                         Serie <em>“Ecos del vacío”</em> — óleo, resina y
@@ -72,71 +79,70 @@
             </div>
 
             <div class="grid-3">
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/104/600/600" alt="Obra 1" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Lamento I</h3>
+                        <h3>☾ Lamento I ☽</h3>
                         <p class="meta">Óleo / lienzo · 120×140 cm · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/106/600/600" alt="Obra 2" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>El susurro de las llamas</h3>
+                        <h3>☾ El susurro de las llamas ☽</h3>
                         <p class="meta">Resina / tabla · 90×120 cm · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/107/600/600" alt="Obra 3" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Ángel caído</h3>
+                        <h3>☾ Ángel caído ☽</h3>
                         <p class="meta">Técnica mixta / lienzo · 150×100 cm · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/108/600/600" alt="Obra 4" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Estructuras de la noche</h3>
+                        <h3>☾ Estructuras de la noche ☽</h3>
                         <p class="meta">Acrílico / papel · 80×110 cm · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/110/600/600" alt="Obra 5" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Pacto de sangre</h3>
+                        <h3>☾ Pacto de sangre ☽</h3>
                         <p class="meta">Óleo / lienzo · 100×80 cm · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap">
                         <img src="https://picsum.photos/id/112/600/600" alt="Obra 6" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Catedral en ruinas</h3>
+                        <h3>☾ Catedral en ruinas ☽</h3>
                         <p class="meta">Técnica mixta / tabla · 110×110 cm · 2025</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DIVISOR DECORATIVO -->
-        <div class="ornament">꧁ ✦  ꧂</div>
+        <div class="ornament">꧁ ✠  ꧂</div>
 
         <!-- FOTOS -->
         <section id="fotos">
             <div class="section-header">
                 <div>
-                    <p class="section-subtitle">Fotografía</p>
+                    <p class="section-subtitle">𖤐 Fotografía 𖤐</p>
                     <h2 class="section-title">Fotografía de la penumbra</h2>
                     <p class="section-desc">
                         Capturas del instante efímero, donde la luz lucha
@@ -146,53 +152,52 @@
             </div>
 
             <div class="grid-2">
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
                         <img src="https://picsum.photos/id/113/800/600" alt="Foto 1" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Espectros urbanos</h3>
+                        <h3>☾ Espectros urbanos ☽</h3>
                         <p class="meta">Fotografía analógica · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
                         <img src="https://picsum.photos/id/114/800/600" alt="Foto 2" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Naturaleza muerta (sombras)</h3>
+                        <h3>☾ Naturaleza muerta (sombras) ☽</h3>
                         <p class="meta">Fotografía digital · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
                         <img src="https://picsum.photos/id/116/800/600" alt="Foto 3" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>El beso de la noche</h3>
+                        <h3>☾ El beso de la noche ☽</h3>
                         <p class="meta">Fotografía analógica · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card gothic-frame">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
                         <img src="https://picsum.photos/id/117/800/600" alt="Foto 4" loading="lazy" />
                     </div>
                     <div class="card-body">
-                        <h3>Cuervos al atardecer</h3>
+                        <h3>☾ Cuervos al atardecer ☽</h3>
                         <p class="meta">Fotografía digital · 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DIVISOR DECORATIVO -->
         <div class="ornament">✦ ✧ ✦</div>
 
         <!-- VIDEOS -->
         <section id="videos">
             <div class="section-header">
                 <div>
-                    <p class="section-subtitle">Video arte</p>
+                    <p class="section-subtitle">◈ Video arte ◈</p>
                     <h2 class="section-title">Visiones en movimiento</h2>
                     <p class="section-desc">
                         Piezas audiovisuales que exploran lo onírico, el
@@ -202,34 +207,31 @@
             </div>
 
             <div class="grid-2">
-                <!-- Video 1 -->
-                <div class="video-card">
+                <div class="video-card gothic-frame">
                     <div class="video-wrap">
                         <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="metadata"></video>
-                        <div class="play-icon">◆</div>
+                        <div class="play-icon">▶</div>
                     </div>
                     <div class="card-body">
-                        <h3>Tránsito en la niebla</h3>
+                        <h3>☾ Tránsito en la niebla ☽</h3>
                         <p class="meta">Video · 3 min · 2025</p>
                     </div>
                 </div>
 
-                <!-- Video 2 -->
-                <div class="video-card">
+                <div class="video-card gothic-frame">
                     <div class="video-wrap">
                         <video src="https://www.w3schools.com/html/movie.mp4" muted loop playsinline preload="metadata"></video>
-                        <div class="play-icon">◆</div>
+                        <div class="play-icon">▶</div>
                     </div>
                     <div class="card-body">
-                        <h3>La danza de las sombras</h3>
+                        <h3>☾ La danza de las sombras ☽</h3>
                         <p class="meta">Video · 4 min · 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DIVISOR DECORATIVO -->
-        <div class="ornament">꧁ ✦  ꧂</div>
+        <div class="ornament">꧁ ✠  ꧂</div>
 
         <!-- CTA -->
         <section class="cta-section" id="contacto">
@@ -237,7 +239,7 @@
             <p>
                 Colaboraciones.
             </p>
-            <a href="#" class="hero-btn">Invocar contacto</a>
+            <a href="#" class="hero-btn">✠ Invocar contacto ✠</a>
         </section>
 
         <!-- FOOTER -->
@@ -253,8 +255,6 @@
 
     </div>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
