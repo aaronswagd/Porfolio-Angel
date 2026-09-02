@@ -8,7 +8,7 @@
 
     function handleScroll() {
         const currentScrollY = window.scrollY;
-        const threshold = 80; // se oculta un poco antes
+        const threshold = 80;
 
         if (currentScrollY > lastScrollY && currentScrollY > threshold) {
             header.classList.add('hidden');
