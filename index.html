@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuroo · Arte Gótico</title>
+    <title>Kuroo · Dossier Artístico</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,24 +14,25 @@
 </head>
 <body>
 
-    <!-- HEADER FIJO -->
+    <!-- HEADER (se oculta al bajar, aparece al subir) -->
     <header id="main-header">
         <div class="container header-inner">
             <div class="logo">Kuroo</div>
             <nav>
+                <a href="#statement">Declaración</a>
+                <a href="#cv">CV</a>
                 <a href="#obras">Obras</a>
                 <a href="#fotos">Fotografía</a>
                 <a href="#videos">Videos</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            <!-- Botón de modo día/noche -->
             <button id="theme-toggle" aria-label="Cambiar tema">
                 <span id="theme-icon">🌙</span>
             </button>
         </div>
     </header>
 
-    <!-- BOTÓN DE SCROLL (inferior derecha) -->
+    <!-- BOTÓN DE SCROLL (subir) -->
     <button id="scroll-top-btn" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24" width="24" height="24">
             <path d="M12 4l-8 8 1.5 1.5L12 7l6.5 6.5L20 12z" fill="currentColor"/>
@@ -40,19 +41,24 @@
 
     <div class="container">
 
-        <!-- HERO -->
+        <!-- ============ PORTADA ============ -->
         <section class="hero" id="inicio">
             <div class="hero-text">
-                <p class="section-subtitle">Artista de la penumbra</p>
+                <p class="section-subtitle">Artista visual mexicano · Juarense</p>
                 <h1>
                     Donde la sombra<br />
                     <span class="highlight">esculpe</span> la luz
                 </h1>
                 <p>
-                    Exploración de lo macabro y lo sublime. Pintura, fotografía
-                    y video como ecos de un universo en tinieblas.
+                    Exploración de lo macabro y lo sublime desde la frontera norte.
+                    Pintura, fotografía y video como ecos de un universo en tinieblas.
                 </p>
-                <a href="#obras" class="hero-btn">Adentrarse en el abismo</a>
+                <div class="contact-info">
+                    <span>📧 kuroo@oscuro.art</span>
+                    <span>📱 +52 656 000 0000</span>
+                    <span>📍 Ciudad Juárez / México</span>
+                </div>
+                <a href="#statement" class="hero-btn">Descubrir el abismo</a>
             </div>
             <div class="hero-media">
                 <div class="main-img">
@@ -67,84 +73,173 @@
             </div>
         </section>
 
-        <!-- DIVISOR -->
         <div class="ornament">✦ ✧ ✦</div>
 
-        <!-- OBRAS -->
+        <!-- ============ ARTIST STATEMENT ============ -->
+        <section id="statement">
+            <div class="section-header">
+                <div>
+                    <p class="section-subtitle">Manifiesto</p>
+                    <h2 class="section-title">Artist Statement</h2>
+                </div>
+            </div>
+            <div class="statement-content">
+                <p>
+                    Nacido en la frontera norte de México, mi obra es un reflejo de las dualidades que habito: 
+                    entre la luz y la oscuridad, entre el desierto y la ciudad, entre la tradición y el abismo. 
+                    Cada pieza es un intento de capturar el instante en que la materia se funde con el vacío, 
+                    donde la sombra se convierte en forma y el silencio en textura.
+                </p>
+                <p>
+                    Trabajo con técnicas mixtas, fotografía analógica y video experimental para explorar 
+                    la fragilidad de la memoria, la dualidad del cuerpo y la arquitectura del dolor. 
+                    Mi práctica se alimenta de la poesía maldita, el cine expresionista y la estética 
+                    de lo ruinoso, siempre desde la mirada periférica de quien vive en el límite.
+                </p>
+                <p>
+                    <em>“No busco respuestas, sino preguntas que quemen como el incienso.”</em>
+                </p>
+            </div>
+        </section>
+
+        <div class="ornament">꧁ ✦  ꧂</div>
+
+        <!-- ============ CV ============ -->
+        <section id="cv">
+            <div class="section-header">
+                <div>
+                    <p class="section-subtitle">Trayectoria</p>
+                    <h2 class="section-title">Currículum Artístico</h2>
+                </div>
+            </div>
+            <div class="cv-grid">
+                <div class="cv-block">
+                    <h3>Exposiciones Individuales</h3>
+                    <ul>
+                        <li><strong>2025</strong> — “Ecos del vacío” · Galería La Penumbra, Madrid</li>
+                        <li><strong>2024</strong> — “Materia en sombra” · Espacio Nocturno, Barcelona</li>
+                        <li><strong>2023</strong> — “Liturgia de la luz” · Museo de Arte Contemporáneo, Valencia</li>
+                    </ul>
+                </div>
+                <div class="cv-block">
+                    <h3>Exposiciones Colectivas</h3>
+                    <ul>
+                        <li><strong>2025</strong> — “Arte y Misticismo” · Centro Cultural de la Villa, Madrid</li>
+                        <li><strong>2024</strong> — “Nuevas figuraciones” · ARCO, Madrid</li>
+                        <li><strong>2023</strong> — “Sombra y materia” · Bienal de Venecia (pabellón español)</li>
+                    </ul>
+                </div>
+                <div class="cv-block">
+                    <h3>Premios y Residencias</h3>
+                    <ul>
+                        <li><strong>2025</strong> — Beca de Creación · Fundación Arte y Pensamiento</li>
+                        <li><strong>2024</strong> — Premio Nacional de Fotografía (mención especial)</li>
+                        <li><strong>2023</strong> — Residencia en La Cité Internationale des Arts, París</li>
+                    </ul>
+                </div>
+                <div class="cv-block">
+                    <h3>Formación</h3>
+                    <ul>
+                        <li><strong>2020–2022</strong> — Máster en Artes Visuales · UCM, Madrid</li>
+                        <li><strong>2015–2019</strong> — Grado en Bellas Artes · UPV, Valencia</li>
+                        <li><strong>2018</strong> — Estancia en Academia de Bellas Artes de Florencia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="ornament">✦ ✧ ✦</div>
+
+        <!-- ============ OBRAS (con fichas técnicas) ============ -->
         <section id="obras">
             <div class="section-header">
                 <div>
                     <p class="section-subtitle">Portafolio</p>
                     <h2 class="section-title">Oscuras obras</h2>
                     <p class="section-desc">
-                        Serie <em>“Ecos del vacío”</em> — óleo, resina y
-                        técnicas mixtas sobre lienzo envejecido.
+                        Serie <em>“Ecos del vacío”</em> — haz clic en cada obra para ver su ficha técnica.
                     </p>
                 </div>
             </div>
 
             <div class="grid-3">
-                <div class="art-card">
+                <div class="art-card" data-id="obra1">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/104/600/600" alt="Obra 1" loading="lazy" />
+                        <img src="https://picsum.photos/id/104/600/600" alt="Lamento I" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Lamento I</h3>
-                        <p class="meta">Óleo / lienzo · 120×140 cm · 2025</p>
+                        <p class="meta">Óleo / lienzo · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card" data-id="obra2">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/106/600/600" alt="Obra 2" loading="lazy" />
+                        <img src="https://picsum.photos/id/106/600/600" alt="El susurro de las llamas" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>El susurro de las llamas</h3>
-                        <p class="meta">Resina / tabla · 90×120 cm · 2024</p>
+                        <p class="meta">Resina / tabla · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card" data-id="obra3">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/107/600/600" alt="Obra 3" loading="lazy" />
+                        <img src="https://picsum.photos/id/107/600/600" alt="Ángel caído" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Ángel caído</h3>
-                        <p class="meta">Técnica mixta / lienzo · 150×100 cm · 2024</p>
+                        <p class="meta">Técnica mixta · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card" data-id="obra4">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/108/600/600" alt="Obra 4" loading="lazy" />
+                        <img src="https://picsum.photos/id/108/600/600" alt="Estructuras de la noche" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Estructuras de la noche</h3>
-                        <p class="meta">Acrílico / papel · 80×110 cm · 2025</p>
+                        <p class="meta">Acrílico / papel · 2025</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card" data-id="obra5">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/110/600/600" alt="Obra 5" loading="lazy" />
+                        <img src="https://picsum.photos/id/110/600/600" alt="Pacto de sangre" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Pacto de sangre</h3>
-                        <p class="meta">Óleo / lienzo · 100×80 cm · 2024</p>
+                        <p class="meta">Óleo / lienzo · 2024</p>
                     </div>
                 </div>
-                <div class="art-card">
+                <div class="art-card" data-id="obra6">
                     <div class="img-wrap">
-                        <img src="https://picsum.photos/id/112/600/600" alt="Obra 6" loading="lazy" />
+                        <img src="https://picsum.photos/id/112/600/600" alt="Catedral en ruinas" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Catedral en ruinas</h3>
-                        <p class="meta">Técnica mixta / tabla · 110×110 cm · 2025</p>
+                        <p class="meta">Técnica mixta · 2025</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DIVISOR -->
+        <!-- ============ MODAL FICHA TÉCNICA ============ -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-body">
+                    <h2 id="modal-title">Título</h2>
+                    <img id="modal-img" src="" alt="" />
+                    <div class="modal-details">
+                        <p><strong>Año:</strong> <span id="modal-year"></span></p>
+                        <p><strong>Técnica:</strong> <span id="modal-technique"></span></p>
+                        <p><strong>Medidas:</strong> <span id="modal-size"></span></p>
+                        <p><strong>Descripción:</strong> <span id="modal-desc"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="ornament">꧁ ✦  ꧂</div>
 
-        <!-- FOTOS -->
+        <!-- ============ FOTOGRAFÍA ============ -->
         <section id="fotos">
             <div class="section-header">
                 <div>
@@ -152,7 +247,7 @@
                     <h2 class="section-title">Fotografía de la penumbra</h2>
                     <p class="section-desc">
                         Capturas del instante efímero, donde la luz lucha
-                        contra la oscuridad. Fotografía analógica de alto contraste.
+                        contra la oscuridad.
                     </p>
                 </div>
             </div>
@@ -160,7 +255,7 @@
             <div class="grid-2">
                 <div class="art-card">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/113/800/600" alt="Foto 1" loading="lazy" />
+                        <img src="https://picsum.photos/id/113/800/600" alt="Espectros urbanos" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Espectros urbanos</h3>
@@ -169,7 +264,7 @@
                 </div>
                 <div class="art-card">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/114/800/600" alt="Foto 2" loading="lazy" />
+                        <img src="https://picsum.photos/id/114/800/600" alt="Naturaleza muerta (sombras)" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Naturaleza muerta (sombras)</h3>
@@ -178,7 +273,7 @@
                 </div>
                 <div class="art-card">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/116/800/600" alt="Foto 3" loading="lazy" />
+                        <img src="https://picsum.photos/id/116/800/600" alt="El beso de la noche" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>El beso de la noche</h3>
@@ -187,7 +282,7 @@
                 </div>
                 <div class="art-card">
                     <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/117/800/600" alt="Foto 4" loading="lazy" />
+                        <img src="https://picsum.photos/id/117/800/600" alt="Cuervos al atardecer" loading="lazy" />
                     </div>
                     <div class="card-body">
                         <h3>Cuervos al atardecer</h3>
@@ -197,10 +292,9 @@
             </div>
         </section>
 
-        <!-- DIVISOR -->
         <div class="ornament">✦ ✧ ✦</div>
 
-        <!-- VIDEOS -->
+        <!-- ============ VIDEOS ============ -->
         <section id="videos">
             <div class="section-header">
                 <div>
@@ -237,21 +331,21 @@
             </div>
         </section>
 
-        <!-- DIVISOR -->
         <div class="ornament">꧁ ✦  ꧂</div>
 
-        <!-- CTA -->
+        <!-- ============ CONTACTO ============ -->
         <section class="cta-section" id="contacto">
             <h2>¿Te atreves a mirar?</h2>
             <p>
-                Colaboraciones.
+                Colaboraciones, galerías oscuras o simplemente compartir
+                visiones. El abismo siempre está abierto.
             </p>
-            <a href="#" class="hero-btn">Invocar contacto</a>
+            <a href="mailto:kuroo@oscuro.art" class="hero-btn">Escribir a Kuroo</a>
         </section>
 
-        <!-- FOOTER -->
+        <!-- ============ FOOTER con Makné ============ -->
         <footer>
-            <span>© 2026 Makné · Diseño Gráfico</span>
+            <span>© 2026 Kuroo · Diseño y desarrollo por <strong>Makné</strong></span>
             <div class="socials">
                 <a href="#">Instagram</a>
                 <a href="#">Behance</a>
@@ -262,6 +356,6 @@
 
     </div>
 
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
