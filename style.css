@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Variables por defecto (modo noche) */
 :root {
     --bg: #0b0908;
