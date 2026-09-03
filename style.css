@@ -582,6 +582,11 @@ footer .socials a:hover {
     text-shadow: 0 0 20px rgba(181, 151, 74, 0.4);
 }
 
+footer strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
     .hero {
