@@ -3,342 +3,216 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuroo · Dossier Artístico</title>
+    <title>Kuroo · Artista Visual</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- HEADER (se oculta al bajar, aparece al subir) -->
+    <!-- HEADER -->
     <header id="main-header">
         <div class="container header-inner">
-            <div class="logo">Kuroo</div>
+            <a href="#inicio" class="logo">Kuroo</a>
             <nav>
-                <a href="#statement">Declaración</a>
-                <a href="#cv">CV</a>
                 <a href="#obras">Obras</a>
                 <a href="#fotos">Fotografía</a>
                 <a href="#videos">Videos</a>
                 <a href="#contacto">Contacto</a>
             </nav>
             <button id="theme-toggle" aria-label="Cambiar tema">
-                <span id="theme-icon">🌙</span>
+                <span id="theme-icon">◐</span>
             </button>
         </div>
     </header>
 
-    <!-- BOTÓN DE SCROLL (subir) -->
+    <!-- BOTÓN SCROLL TOP -->
     <button id="scroll-top-btn" aria-label="Volver arriba">
-        <svg viewBox="0 0 24 24" width="24" height="24">
+        <svg viewBox="0 0 24 24" width="20" height="20">
             <path d="M12 4l-8 8 1.5 1.5L12 7l6.5 6.5L20 12z" fill="currentColor"/>
         </svg>
     </button>
 
-    <div class="container">
+    <main class="container">
 
-        <!-- ============ PORTADA ============ -->
+        <!-- PERFIL -->
         <section class="hero" id="inicio">
-            <div class="hero-text">
-                <p class="section-subtitle">Artista visual mexicano · Juarense</p>
-                <h1>
-                    Donde la sombra<br />
-                    <span class="highlight">esculpe</span> la luz
-                </h1>
-                <p>
-                    Exploración de lo macabro y lo sublime desde la frontera norte.
-                    Pintura, fotografía y video como ecos de un universo en tinieblas.
-                </p>
-                <div class="contact-info">
-                    <span> kuroo@oscuro.art |</span>
-                    <span> +52 656 000 0000 |</span>
-                    <span> Ciudad Juárez / México</span>
-                </div>
-                <a href="#statement" class="hero-btn">Descubrir el abismo</a>
-            </div>
-            <div class="hero-media">
-                <div class="main-img">
-                    <img src="https://picsum.photos/id/1043/800/800" alt="Obra principal" loading="lazy" />
-                </div>
-                <div class="side-img">
-                    <img src="https://picsum.photos/id/103/600/600" alt="Detalle oscuro" loading="lazy" />
-                </div>
-                <div class="side-img">
-                    <img src="https://picsum.photos/id/1049/600/600" alt="Detalle gótico" loading="lazy" />
-                </div>
-            </div>
-        </section>
-
-        <div class="ornament">✦ ✧ ✦</div>
-
-        <!-- ============ ARTIST STATEMENT ============ -->
-        <section id="statement">
-            <div class="section-header">
-                <div>
-                    <p class="section-subtitle">Manifiesto</p>
-                    <h2 class="section-title">Artist Statement</h2>
-                </div>
-            </div>
-            <div class="statement-content">
-                <p>
-                    Nacido en la frontera norte de México, mi obra es un reflejo de las dualidades que habito: 
-                    entre la luz y la oscuridad, entre el desierto y la ciudad, entre la tradición y el abismo. 
-                    Cada pieza es un intento de capturar el instante en que la materia se funde con el vacío, 
-                    donde la sombra se convierte en forma y el silencio en textura.
-                </p>
-                <p>
-                    Trabajo con técnicas mixtas, fotografía analógica y video experimental para explorar 
-                    la fragilidad de la memoria, la dualidad del cuerpo y la arquitectura del dolor. 
-                    Mi práctica se alimenta de la poesía maldita, el cine expresionista y la estética 
-                    de lo ruinoso, siempre desde la mirada periférica de quien vive en el límite.
-                </p>
-                <p>
-                    <em>“No busco respuestas, sino preguntas que quemen como el incienso.”</em>
-                </p>
-            </div>
-        </section>
-
-        <div class="ornament">꧁ ✦  ꧂</div>
-
-        <!-- ============ CV ============ -->
-        <section id="cv">
-            <div class="section-header">
-                <div>
-                    <p class="section-subtitle">Trayectoria</p>
-                    <h2 class="section-title">Currículum Artístico</h2>
-                </div>
-            </div>
-            <div class="cv-grid">
-                <div class="cv-block">
-                    <h3>Exposiciones Individuales</h3>
-                    <ul>
-                        <li><strong>2025</strong> — “Ecos del vacío” · Galería La Penumbra, Madrid</li>
-                        <li><strong>2024</strong> — “Materia en sombra” · Espacio Nocturno, Barcelona</li>
-                        <li><strong>2023</strong> — “Liturgia de la luz” · Museo de Arte Contemporáneo, Valencia</li>
-                    </ul>
-                </div>
-                <div class="cv-block">
-                    <h3>Exposiciones Colectivas</h3>
-                    <ul>
-                        <li><strong>2025</strong> — “Arte y Misticismo” · Centro Cultural de la Villa, Madrid</li>
-                        <li><strong>2024</strong> — “Nuevas figuraciones” · ARCO, Madrid</li>
-                        <li><strong>2023</strong> — “Sombra y materia” · Bienal de Venecia (pabellón español)</li>
-                    </ul>
-                </div>
-                <div class="cv-block">
-                    <h3>Premios y Residencias</h3>
-                    <ul>
-                        <li><strong>2025</strong> — Beca de Creación · Fundación Arte y Pensamiento</li>
-                        <li><strong>2024</strong> — Premio Nacional de Fotografía (mención especial)</li>
-                        <li><strong>2023</strong> — Residencia en La Cité Internationale des Arts, París</li>
-                    </ul>
-                </div>
-                <div class="cv-block">
-                    <h3>Formación</h3>
-                    <ul>
-                        <li><strong>2020–2022</strong> — Máster en Artes Visuales · UCM, Madrid</li>
-                        <li><strong>2015–2019</strong> — Grado en Bellas Artes · UPV, Valencia</li>
-                        <li><strong>2018</strong> — Estancia en Academia de Bellas Artes de Florencia</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="ornament">✦ ✧ ✦</div>
-
-        <!-- ============ OBRAS (con fichas técnicas) ============ -->
-        <section id="obras">
-            <div class="section-header">
-                <div>
-                    <p class="section-subtitle">Portafolio</p>
-                    <h2 class="section-title">Oscuras obras</h2>
-                    <p class="section-desc">
-                        Serie <em>“Ecos del vacío”</em> — haz clic en cada obra para ver su ficha técnica.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid-3">
-                <div class="art-card" data-id="obra1">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/104/600/600" alt="Lamento I" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Lamento I</h3>
-                        <p class="meta">Óleo / lienzo · 2025</p>
-                    </div>
-                </div>
-                <div class="art-card" data-id="obra2">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/106/600/600" alt="El susurro de las llamas" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>El susurro de las llamas</h3>
-                        <p class="meta">Resina / tabla · 2024</p>
-                    </div>
-                </div>
-                <div class="art-card" data-id="obra3">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/107/600/600" alt="Ángel caído" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Ángel caído</h3>
-                        <p class="meta">Técnica mixta · 2024</p>
-                    </div>
-                </div>
-                <div class="art-card" data-id="obra4">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/108/600/600" alt="Estructuras de la noche" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Estructuras de la noche</h3>
-                        <p class="meta">Acrílico / papel · 2025</p>
-                    </div>
-                </div>
-                <div class="art-card" data-id="obra5">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/110/600/600" alt="Pacto de sangre" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Pacto de sangre</h3>
-                        <p class="meta">Óleo / lienzo · 2024</p>
-                    </div>
-                </div>
-                <div class="art-card" data-id="obra6">
-                    <div class="img-wrap">
-                        <img src="https://picsum.photos/id/112/600/600" alt="Catedral en ruinas" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Catedral en ruinas</h3>
-                        <p class="meta">Técnica mixta · 2025</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <div class="ornament">꧁ ✦  ꧂</div>
-
-        <!-- ============ FOTOGRAFÍA ============ -->
-        <section id="fotos">
-            <div class="section-header">
-                <div>
-                    <p class="section-subtitle">Fotografía</p>
-                    <h2 class="section-title">Fotografía de la penumbra</h2>
-                    <p class="section-desc">
-                        Capturas del instante efímero, donde la luz lucha
-                        contra la oscuridad.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid-2">
-                <div class="art-card">
-                    <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/113/800/600" alt="Espectros urbanos" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Espectros urbanos</h3>
-                        <p class="meta">Fotografía analógica · 2025</p>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/114/800/600" alt="Naturaleza muerta (sombras)" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Naturaleza muerta (sombras)</h3>
-                        <p class="meta">Fotografía digital · 2024</p>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/116/800/600" alt="El beso de la noche" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>El beso de la noche</h3>
-                        <p class="meta">Fotografía analógica · 2025</p>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="img-wrap" style="aspect-ratio: 4 / 3;">
-                        <img src="https://picsum.photos/id/117/800/600" alt="Cuervos al atardecer" loading="lazy" />
-                    </div>
-                    <div class="card-body">
-                        <h3>Cuervos al atardecer</h3>
-                        <p class="meta">Fotografía digital · 2024</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="ornament">✦ ✧ ✦</div>
-
-        <!-- ============ VIDEOS ============ -->
-        <section id="videos">
-            <div class="section-header">
-                <div>
-                    <p class="section-subtitle">Video arte</p>
-                    <h2 class="section-title">Visiones en movimiento</h2>
-                    <p class="section-desc">
-                        Piezas audiovisuales que exploran lo onírico, el
-                        cuerpo y la descomposición de la materia.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid-2">
-                <div class="video-card">
-                    <div class="video-wrap">
-                        <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="metadata"></video>
-                        <div class="play-icon">▶</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Tránsito en la niebla</h3>
-                        <p class="meta">Video · 3 min · 2025</p>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrap">
-                        <video src="https://www.w3schools.com/html/movie.mp4" muted loop playsinline preload="metadata"></video>
-                        <div class="play-icon">▶</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>La danza de las sombras</h3>
-                        <p class="meta">Video · 4 min · 2024</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="ornament">꧁ ✦  ꧂</div>
-
-        <!-- ============ CONTACTO ============ -->
-        <section class="cta-section" id="contacto">
-            <h2>¿Te atreves a mirar?</h2>
-            <p>
-                Colaboraciones, galerías oscuras o simplemente compartir
-                visiones. El abismo siempre está abierto.
+            <h1>Kuroo</h1>
+            <p class="subtitle">Artista visual · Ciudad Juárez, México</p>
+            <p class="bio">
+                Trabajo la pintura, la fotografía y el video desde la frontera norte.
+                Mi obra explora la memoria, la materia y la tensión entre la luz y la sombra.
             </p>
-            <a href="mailto:kuroo@oscuro.art" class="hero-btn">Escribir a Kuroo</a>
+            <div class="links">
+                <a href="mailto:kuroo@oscuro.art">kuroo@oscuro.art</a>
+                <a href="#">Instagram</a>
+                <a href="#">Vimeo</a>
+            </div>
         </section>
 
-        <!-- ============ FOOTER con Makné ============ -->
-        <footer>
-            <span>© 2026 Kuroo · Diseño y desarrollo por <strong>Makné</strong></span>
-            <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">Behance</a>
-                <a href="#">Vimeo</a>
-                <a href="#">Email</a>
+        <!-- OBRAS -->
+        <section id="obras">
+            <div class="section-head">
+                <h2>Obras</h2>
+                <p class="hint">Toca cada pieza para ver su ficha técnica</p>
             </div>
-        </footer>
 
-    </div>
+            <div class="grid-works">
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/104/800/1000" alt="Lamento I" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>Lamento I</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2025</dd>
+                                <dt>Técnica</dt><dd>Óleo sobre lienzo</dd>
+                                <dt>Medidas</dt><dd>120 × 140 cm</dd>
+                            </dl>
+                            <p>Primera pieza de la serie "Ecos del vacío". Explora la dualidad entre el dolor y la belleza mediante pinceladas gestuales y un cromatismo reducido.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/106/800/1000" alt="El susurro de las llamas" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>El susurro de las llamas</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2024</dd>
+                                <dt>Técnica</dt><dd>Resina y pigmento sobre tabla</dd>
+                                <dt>Medidas</dt><dd>90 × 120 cm</dd>
+                            </dl>
+                            <p>La textura de la resina crea un efecto de combustión contenida. Reflexión sobre la energía destructiva y creativa del fuego.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/107/800/1000" alt="Ángel caído" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>Ángel caído</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2024</dd>
+                                <dt>Técnica</dt><dd>Técnica mixta (óleo, arena, pan de oro)</dd>
+                                <dt>Medidas</dt><dd>150 × 100 cm</dd>
+                            </dl>
+                            <p>Representación del momento de la caída, donde la materia se desgarra y el oro sangra. Alegoría de la pérdida de la inocencia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/108/800/1000" alt="Estructuras de la noche" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>Estructuras de la noche</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2025</dd>
+                                <dt>Técnica</dt><dd>Acrílico y carbón sobre papel</dd>
+                                <dt>Medidas</dt><dd>80 × 110 cm</dd>
+                            </dl>
+                            <p>Arquitecturas oníricas que se disuelven en la oscuridad. Juego de líneas y manchas que sugieren ciudades fantasma.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/110/800/1000" alt="Pacto de sangre" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>Pacto de sangre</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2024</dd>
+                                <dt>Técnica</dt><dd>Óleo sobre lienzo</dd>
+                                <dt>Medidas</dt><dd>100 × 80 cm</dd>
+                            </dl>
+                            <p>Dos figuras entrelazadas en un abrazo que es también una herida. La pintura se desgarra mostrando capas inferiores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="https://picsum.photos/id/112/800/1000" alt="Catedral en ruinas" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <h3>Catedral en ruinas</h3>
+                            <dl>
+                                <dt>Año</dt><dd>2025</dd>
+                                <dt>Técnica</dt><dd>Técnica mixta (acrílico, yeso, oxidación)</dd>
+                                <dt>Medidas</dt><dd>110 × 110 cm</dd>
+                            </dl>
+                            <p>Superposición de capas que evocan la decadencia de un templo gótico. Los tonos ocres remiten al paso del tiempo.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOTOGRAFÍA -->
+        <section id="fotos">
+            <div class="section-head">
+                <h2>Fotografía</h2>
+            </div>
+            <div class="grid-photos">
+                <img src="https://picsum.photos/id/113/800/600" alt="" loading="lazy">
+                <img src="https://picsum.photos/id/114/800/600" alt="" loading="lazy">
+                <img src="https://picsum.photos/id/116/800/600" alt="" loading="lazy">
+                <img src="https://picsum.photos/id/117/800/600" alt="" loading="lazy">
+            </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section id="videos">
+            <div class="section-head">
+                <h2>Videos</h2>
+            </div>
+            <div class="grid-videos">
+                <div class="video-item">
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="metadata"></video>
+                    <p class="video-title">Tránsito en la niebla · 3 min · 2025</p>
+                </div>
+                <div class="video-item">
+                    <video src="https://www.w3schools.com/html/movie.mp4" muted loop playsinline preload="metadata"></video>
+                    <p class="video-title">La danza de las sombras · 4 min · 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contacto" id="contacto">
+            <h2>Contacto</h2>
+            <p>Colaboraciones, exposiciones o proyectos.</p>
+            <a href="mailto:kuroo@oscuro.art" class="contact-link">kuroo@oscuro.art</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <span>© 2026 Kuroo</span>
+            <span>Diseño por <a href="#">Makné</a></span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
