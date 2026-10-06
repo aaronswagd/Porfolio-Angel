@@ -39,23 +39,24 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ─── TEMA DÍA / NOCHE ───
+    // ─── TEMA · OSCURO POR DEFECTO ───
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark');
-        themeIcon.textContent = '◑';
-    } else {
+    // Si guardó "light" alguna vez, respetarlo; si no, modo oscuro
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light');
         themeIcon.textContent = '◐';
+    } else {
+        themeIcon.textContent = '◑';
     }
 
     themeToggle.addEventListener('click', function () {
-        body.classList.toggle('dark');
-        const isDark = body.classList.contains('dark');
-        themeIcon.textContent = isDark ? '◑' : '◐';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        body.classList.toggle('light');
+        const isLight = body.classList.contains('light');
+        themeIcon.textContent = isLight ? '◐' : '◑';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 
     // ─── FLIP CARDS ───
