@@ -1,38 +1,33 @@
-(function() {
+(function () {
     'use strict';
 
     // ─── HEADER OCULTO / MOSTRAR ───
     const header = document.getElementById('main-header');
-    let lastScrollY = window.scrollY;
+    let lastY = window.scrollY;
     let ticking = false;
 
-    function handleScroll() {
-        const currentScrollY = window.scrollY;
-        const threshold = 80;
-
-        if (currentScrollY > lastScrollY && currentScrollY > threshold) {
+    function onScroll() {
+        const y = window.scrollY;
+        if (y > lastY && y > 80) {
             header.classList.add('hidden');
         } else {
             header.classList.remove('hidden');
         }
-
-        lastScrollY = currentScrollY;
+        lastY = y;
         ticking = false;
     }
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (!ticking) {
-            window.requestAnimationFrame(function() {
-                handleScroll();
-            });
+            window.requestAnimationFrame(onScroll);
             ticking = true;
         }
     });
 
-    // ─── BOTÓN DE SCROLL ───
+    // ─── BOTÓN SCROLL TOP ───
     const scrollBtn = document.getElementById('scroll-top-btn');
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 400) {
             scrollBtn.classList.add('visible');
         } else {
@@ -40,98 +35,64 @@
         }
     });
 
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    scrollBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ─── MODO DÍA / NOCHE (con depuración) ───
+    // ─── TEMA DÍA / NOCHE ───
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    // Cargar preferencia guardada
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
-        themeIcon.textContent = '☀️';
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+        themeIcon.textContent = '◑';
     } else {
-        themeIcon.textContent = '🌙';
+        themeIcon.textContent = '◐';
     }
 
-    // Evento con confirmación
-    themeToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        body.classList.toggle('light-mode');
-        const isLight = body.classList.contains('light-mode');
-        themeIcon.textContent = isLight ? '☀️' : '🌙';
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        console.log('Tema cambiado a:', isLight ? 'día' : 'noche'); // Para depuración
+    themeToggle.addEventListener('click', function () {
+        body.classList.toggle('dark');
+        const isDark = body.classList.contains('dark');
+        themeIcon.textContent = isDark ? '◑' : '◐';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // ─── FLIP CARDS ───
+    document.querySelectorAll('.flip-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+            card.classList.toggle('flipped');
+        });
     });
 
     // ─── VIDEOS ───
-    const videoCards = document.querySelectorAll('.video-card');
-
-    videoCards.forEach(card => {
-        const video = card.querySelector('video');
+    document.querySelectorAll('.video-item').forEach(function (item) {
+        const video = item.querySelector('video');
         if (!video) return;
 
-        card.addEventListener('click', function(e) {
-            if (e.target.tagName === 'VIDEO') return;
+        item.addEventListener('click', function () {
             if (video.paused) {
-                video.play().catch(() => {});
+                document.querySelectorAll('.video-item video').forEach(function (v) {
+                    if (v !== video) v.pause();
+                });
+                video.play().catch(function () {});
             } else {
                 video.pause();
             }
-        });
-
-        video.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (video.paused) {
-                video.play().catch(() => {});
-            } else {
-                video.pause();
-            }
-        });
-
-        video.addEventListener('play', function() {
-            videoCards.forEach(otherCard => {
-                const otherVideo = otherCard.querySelector('video');
-                if (otherVideo && otherVideo !== video && !otherVideo.paused) {
-                    otherVideo.pause();
-                }
-            });
         });
     });
-
-    // ─── PAUSAR VIDEOS AL SALIR DE PANTALLA ───
-    if ('IntersectionObserver' in window) {
-        const videos = document.querySelectorAll('video');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const video = entry.target;
-                if (!entry.isIntersecting && !video.paused) {
-                    video.pause();
-                }
-            });
-        }, { threshold: 0.2 });
-        videos.forEach(v => observer.observe(v));
-    }
 
     // ─── NAVEGACIÓN SUAVE ───
-    document.querySelectorAll('nav a, .hero-btn[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId && targetId.startsWith('#')) {
-                const targetEl = document.querySelector(targetId);
-                if (targetEl) {
+    document.querySelectorAll('nav a, .logo').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            const id = this.getAttribute('href');
+            if (id && id.startsWith('#')) {
+                const el = document.querySelector(id);
+                if (el) {
                     e.preventDefault();
-                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                    el.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
     });
-
 })();
