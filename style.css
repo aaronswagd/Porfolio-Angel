@@ -510,10 +510,11 @@ footer {
 
 .footer-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 24px;
+    text-align: center;
 }
 
 .footer-inner a {
